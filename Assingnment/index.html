@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather flow · live api + individual history</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+<div class="glass-panel">
+  <h1>
+    ⛅ weather flow
+    <span>live api · individual delete</span>
+  </h1>
+  <div class="sub">async/await · fetch · micro/macro · only valid cities in history</div>
+
+  <div class="dashboard-grid">
+    <div class="left-panel">
+      <div class="search-card">
+        <div class="search-label"><span>🔎</span> search city</div>
+        <div class="search-row">
+          <input type="text" placeholder="e.g. Barcelona, Tokyo" value="London" id="cityInput">
+          <button id="searchBtn"><span>🌀</span> get weather</button>
+        </div>
+        <div id="errorContainer"></div>
+      </div>
+
+      <div class="weather-panel">
+        <div class="city-tag">
+          <h2 id="displayCity">--</h2>
+          <span class="chip" id="displayCondition">--</span>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-block">
+            <div class="label">🌡️ temp</div>
+            <div><span class="value" id="displayTemp">--</span><span class="unit">°C</span></div>
+          </div>
+          <div class="metric-block">
+            <div class="label">💧 humidity</div>
+            <div><span class="value" id="displayHumidity">--</span><span class="unit">%</span></div>
+          </div>
+          <div class="metric-block">
+            <div class="label">🌬️ wind</div>
+            <div><span class="value" id="displayWind">--</span><span class="unit">m/s</span></div>
+          </div>
+          <div class="metric-block">
+            <div class="label">📊 pressure</div>
+            <div><span class="value" id="displayPressure">--</span><span class="unit">hPa</span></div>
+          </div>
+          <div class="weather-foot">
+            <span>⏱️ last update</span>
+            <span id="displayUpdated">--</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="history-card">
+        <div class="history-header">
+          <h3>📋 search history <span style="font-size: 0.9rem; background: #d3e5f5; padding: 0.2rem 1rem; border-radius: 30px;" id="historyCount">0</span></h3>
+          <button class="delete-all" id="deleteAllBtn">🗑️ delete all</button>
+        </div>
+        <div class="history-list" id="historyContainer"></div>
+      </div>
+
+      <div class="console-card">
+        <div class="console-title">⚙️ event loop console</div>
+        <div class="console-line sync">🔹 sync start</div>
+        <div class="console-line sync">🔹 sync end</div>
+        <div class="console-line">⏳ [ASYNC] fetch started</div>
+        <div class="console-line micro">⚡ [PROMISE] microtask (then/catch)</div>
+        <div class="console-line macro">⏰ [MACRO] setTimeout</div>
+        <div style="color:#91b9d6; padding:0.4rem 0.8rem;">▶️ call stack · task queue · microtask checkpoint</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="criteria-row">
+    <div class="criteria-badge">
+      <span class="criteria-item">⚙️ functionality 1.5</span>
+      <span class="criteria-item">🎨 ui 0.5</span>
+    </div>
+    <a href="#" class="geo-sample" id="geoDemoLink">🌍 Geo Sample : click here to see the Video Demo</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
