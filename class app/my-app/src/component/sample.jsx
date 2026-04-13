@@ -30,40 +30,32 @@ function Sample(props) {
     <div>
         <Button >First</Button>
         <Button green>Second</Button>
-        <button css={{
-            backgroundColor:"yellow",
-            color:"white",
-            width:"100px",
-            height:"35px",
-            borderRadius:"10px",
-            border:"none"
-        }}>Third</button>
+        <button css={buttonStyle}>Third</button>
+        <button className='bg-red-500 text-white w-20 h-8'>Fourth</button>
     </div>
     </div>
   )
 }
 
-// export default Sample
-
-// const Button=styled.button`
-//     background-color: ${(props) => (props.green ? "green" : "red")};
-//     color: white;
-//     width: 100px;
-//     height: 35px;
-//     border-radius: 10px;
-//     border:none
-
 export default Sample
+
 const buttonStyle=css`
     background-color: orange;
     color: white;
     width: 100px;
     height: 35px;
     border-radius: 10px;
-    border:none;
+    border:none
 `
 
-
+const Button=styled.button`
+    background-color: ${(props) => (props.green ? "green" : "red")};
+    color: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    border:none
+`
 
 // class Sample extends Component {
 //     constructor(props){
