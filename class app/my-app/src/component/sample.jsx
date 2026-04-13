@@ -43,16 +43,27 @@ function Sample(props) {
   )
 }
 
-export default Sample
+// export default Sample
 
-const Button=styled.button`
-    background-color: ${(props) => (props.green ? "green" : "red")};
+// const Button=styled.button`
+//     background-color: ${(props) => (props.green ? "green" : "red")};
+//     color: white;
+//     width: 100px;
+//     height: 35px;
+//     border-radius: 10px;
+//     border:none
+
+export default Sample
+const buttonStyle=css`
+    background-color: orange;
     color: white;
     width: 100px;
     height: 35px;
     border-radius: 10px;
-    border:none
+    border:none;
 `
+
+
 
 // class Sample extends Component {
 //     constructor(props){
