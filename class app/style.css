@@ -1,0 +1,39 @@
+.btn{
+    background-color: darkblue;
+    color: white;
+    width: 100px;
+    height: 35px;
+    
+}
+
+li{
+    width: 300px;
+    background-color: tan;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 3px;
+}
+
+.event_card{
+    width: 150px;
+    background-color: tan;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 3px;
+    position: relative;
+}
+.deletebtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
