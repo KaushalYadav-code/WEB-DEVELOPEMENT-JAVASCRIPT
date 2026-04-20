@@ -1,4 +1,5 @@
-import React,{Component, useState, useEffect} from 'react'
+
+import React,{Component, useState, useEffect, useRef} from 'react'
 import style from '../css/Sample.module.css'
 import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
@@ -10,6 +11,7 @@ function Sample(props) {
     const [name,setName]=useState("Devendra")
     const [age,setAge]=useState(20)
     const [loading, setLoading] = useState(false)
+    const inputRef=useRef(null)
 
     useEffect(()=>{
         
@@ -40,6 +42,9 @@ function Sample(props) {
             }
         
         fetchingData()
+
+        inputRef.current.value="Hello"
+        inputRef.current.focus()
         },[])
     
 
@@ -53,6 +58,8 @@ function Sample(props) {
             setName("Alex")
             
         }}>Name Change</button>
+
+        <input type='text' placeholder='"Enter the text' ref={inputRef}></input>
     <button
         className="counter"
         onClick={() => props.setCount((count) => count + 1)}
