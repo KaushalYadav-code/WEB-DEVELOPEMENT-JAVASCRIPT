@@ -1,32 +1,51 @@
-import React,{Component, useEffect, useState} from 'react'
+import React,{Component, useState, useEffect} from 'react'
 import style from '../css/Sample.module.css'
 import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import axios from 'axios'
 
 function Sample(props) {
     const [name,setName]=useState("Devendra")
     const [age,setAge]=useState(20)
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
-
-        function fectchingData(){
-            console.log("Fetching data ")
-
-    }
- 
-    fectchingData()
-
+        
         console.log("Component mounted")
         return ()=>{
             console.log("Component unmounted")
         }
-    }, [name])
+    },[name])
 
+    useEffect(()=>{
+        // async function fetchingData(){
+        //     const response=await fetch("https://dummyjson.com/products",{
+        //         method:"GET"
+        //     })
+        //     const data=await response.json()
+        //     console.log(data)
+        // }
+
+        async function fetchingData(){
+            try{
+                setLoading(true)
+                const response=await axios.get("https://dummyjson.com/products/")
+            console.log(response.data)
+            setLoading(false)
+            }catch(error){
+                console.log(error)
+            }
+            }
+        
+        fetchingData()
+        },[])
     
+
   return (
     <div>
+        {loading?<h1>Loading...</h1>:<h1></h1>}
       <h2>Trending topics</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quae maiores, nobis laboriosam non commodi quia consequuntur vitae dolore facere deserunt quas recusandae iste harum in, provident aut reprehenderit temporibus.</p>
       <h3>{name}</h3>
