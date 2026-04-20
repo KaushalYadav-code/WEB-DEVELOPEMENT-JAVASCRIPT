@@ -10,12 +10,21 @@ function Sample(props) {
     const [age,setAge]=useState(20)
 
     useEffect(()=>{
+
+        function fectchingData(){
+            console.log("Fetching data ")
+
+    }
+ 
+    fectchingData()
+
         console.log("Component mounted")
         return ()=>{
             console.log("Component unmounted")
         }
     }, [name])
- 
+
+    
   return (
     <div>
       <h2>Trending topics</h2>
