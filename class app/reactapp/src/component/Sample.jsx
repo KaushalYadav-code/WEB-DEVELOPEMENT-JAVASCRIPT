@@ -1,5 +1,5 @@
 
-import React,{Component, useState} from 'react'
+import React,{Component, useEffect, useState} from 'react'
 import style from '../css/Sample.module.css'
 import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
@@ -10,8 +10,13 @@ function Sample(props) {
     const [name,setName]=useState("Devendra")
     const [age,setAge]=useState(20)
 
-    
-
+    useEffect(()=>{
+        console.log("Component mounted")
+        return ()=>{
+            console.log("Component unmounted")
+        }
+    }, [name])
+ 
   return (
     <div>
       <h2>Trending topics</h2>
