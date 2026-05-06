@@ -1,3 +1,7 @@
+// VARIABLES = A container that stores a value.
+//             Behave as if it were the value it contains.
+
+
 // let x;
 // x = 123
 // let x = 123;
@@ -29,3 +33,15 @@
 // console.log(`Bro is online: ${online}`);
 // console.log(`Is this car for sale: ${forsale}`);
 // console.log(`Enrolled: ${isStudent}`);
+
+// let online = true;
+
+// console.log(`Bro is online: ${online}`);
+
+let fullName = "Bro Code";
+let age = 25;
+let student = false;
+
+document.getElementById("p1").textContent = `Your name is ${fullName}`; 
+document.getElementById("p2").textContent = `Your age is ${age}`;
+document.getElementById("p3").textContent = `Is a student: ${student}`;
